@@ -1,0 +1,2 @@
+gcc main.c showMenu.c funcStudent.c headStudent.h -o main
+./main
