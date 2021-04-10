@@ -1,6 +1,7 @@
 #define maxStudent 6
-struct Student createStudent();
+//struct Student createStudent();
 int readStudents();
+
 
 int indexStudent;
 

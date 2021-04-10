@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-int showMenu();
+//#include "Components/Menu.c"
 
 int main (void){
     showMenu();
