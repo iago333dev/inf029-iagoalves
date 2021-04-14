@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-int updateMenu();
 
-//#include "../Functions/Student.c"
+#include "../Functions/Student.c"
 
+int updateStudentMenu();
 
 int showMenu(){  
 	int init = 0;
@@ -15,6 +15,7 @@ int showMenu(){
 		printf("Digite 1 Inserir Aluno \n");
 		printf("Digite 2 Listar Alunos \n");
 		printf("Digite 3 Atualizar Aluno \n");
+		printf("Digite 4 Deletar Aluno \n");
 		printf("========= MENU ===========\n"); 
 		scanf("%d",&resp);
 
@@ -30,9 +31,13 @@ int showMenu(){
 			}   
 
 			case 3:{
-			resp = updateStudentMenu(); 
+			updateStudentMenu(); 
 			break;
-			}      
+			}
+			case 4:{
+			resp = deleteStudent();
+			break;
+			}       
 
 			break;
 			}
@@ -41,14 +46,22 @@ int showMenu(){
 }
 
 int updateStudentMenu(){
-	    int menu,user_id,option;
+	    int user_id,option;
 
-    while(menu != 5){
+    while(option != 0){
         printf("Digite 1 para atualizar Nome \n");
         printf("Digite 2 para atualizar Sexo \n");
+		printf("Digite 0 para Menu \n");
+
         scanf("%d",&option);
 
-        menu = updateStudent(option);
+		if(option == 0)  {
+        	showMenu();
+    	}
+
+        updateStudent(option);
     }
+
+	return 0;
 
 }

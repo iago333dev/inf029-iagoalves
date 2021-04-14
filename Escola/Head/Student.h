@@ -1,9 +1,12 @@
 #define maxStudent 6
 //struct Student createStudent();
 int readStudents();
+int createStudent();
+int readStudents();
+int updateStudent(int option);
+int deleteStudent();
 
 
-int indexStudent;
 
 struct Student{
     int Matricula;
