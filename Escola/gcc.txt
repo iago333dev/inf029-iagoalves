@@ -1,2 +1,0 @@
-
-gcc ./Main.c ./Functions/Student.c ./Head/Student.h ./Head/Layout.h ./Layout/Menu.c -o main
