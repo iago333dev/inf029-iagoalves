@@ -137,7 +137,7 @@ int q1(char *data){
 	imonth = atoi(month);
 	iyear = atoi(year);
 
-    printf("Dia: %d\n",idate);
+  //  printf("Dia: %d\n",idate);
  //   printf("Mes: %d\n",imonth);
 //    printf("Ano: %d\n",iyear);
 
