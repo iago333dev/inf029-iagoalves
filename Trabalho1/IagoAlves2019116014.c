@@ -75,6 +75,18 @@ int validateMonth(int month){
     }
 }
 
+int validateDay(int day){
+    if(day >= 1 && day <= 31){
+        return 1;
+    }else{
+        return 0;
+    }
+}
+
+int validateYear(int year){
+
+}
+
 int q1(char *data){
     int datavalida = 0;
 
@@ -125,14 +137,15 @@ int q1(char *data){
 	imonth = atoi(month);
 	iyear = atoi(year);
 
-//    printf("Dia: %d\n",idate);
-    printf("Mes: %d\n",imonth);
+    printf("Dia: %d\n",idate);
+ //   printf("Mes: %d\n",imonth);
 //    printf("Ano: %d\n",iyear);
 
-    if(validateMonth(imonth)){
-        return 0;
-    }else{
+    if(validateMonth(imonth) && validateDay(idate)){
         return 1;
+        
+    }else{
+        return 0;
     }
   
 
