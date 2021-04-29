@@ -67,25 +67,62 @@ int fatorial(int x){ //função utilizada para testes
     0 -> se data inválida
     1 -> se data válida
  */
-int validateMonth(int month){
-    if(month >= 1 && month <= 12){
+int bissextileYear(int year){
+    //Se ano não é uniformente divisivel por 4 return falso
+    if(!year % 4){
+        return 0;
+    }else if(!year % 100){
         return 1;
-    }else{
+    }else if(year % 400){
+        return 1;
+    }else {
         return 0;
     }
-}
 
-int validateDay(int day){
-    if(day >= 1 && day <= 31){
-        return 1;
-    }else{
-        return 0;
+}
+int validateDate(int day, int month, int year){
+    switch (month){
+    case 1:
+    case 3:
+    case 5:
+    case 7:
+    case 8:
+    case 10:
+    case 12:{
+        if (day > 1 && day <= 31){
+            return 1;
+        }
+        break;
     }
+    case 4:
+    case 6:
+    case 9:
+    case 11:{
+        if (day > 1 && day <= 30){ 
+            return 1;
+        }
+        break;
+    }
+    case 2:{ //Fevereiro -> Verificação ano bissexto
+        if(day > 1 && day <= 28 ){
+            return 1;
+        }
+        if(day == 29 && bissextileYear(year)){
+            return 1;
+            
+        }else{
+            return 0;
+        }
+        break;
+    }
+    
+    }
+
+    return 0;
+
+    
 }
 
-int validateYear(int year){
-
-}
 
 int q1(char *data){
     int datavalida = 0;
@@ -141,9 +178,8 @@ int q1(char *data){
  //   printf("Mes: %d\n",imonth);
 //    printf("Ano: %d\n",iyear);
 
-    if(validateMonth(imonth) && validateDay(idate)){
-        return 1;
-        
+    if(validateDate(idate,imonth,iyear)){
+        return 1;        
     }else{
         return 0;
     }
