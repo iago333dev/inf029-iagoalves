@@ -108,8 +108,7 @@ int validateDate(int day, int month, int year){
             return 1;
         }
         if(day == 29 && bissextileYear(year)){
-            return 1;
-            
+            return 1;            
         }else{
             return 0;
         }
@@ -138,6 +137,21 @@ int q1(char *data){
     int idate = 0;
     int imonth = 0;
     int iyear = 0;
+
+    //Validação -> Somente numeros
+     
+    while(*(data + counter) != '\0'){
+        //Se Valor ASCII < QUE 48 -> 0 INTEIRO
+        //OU Valor ASCII > QUE 57 -> 9 INTEIRO 
+        //NUMERO INVALIDO
+        //COM EXCESSÃO DE 47 -> / sEPARAÇÃO
+        if(*(data + counter)!= 47 && *(data + counter) < 48 || *(data + counter) > 57){
+            return 0;
+        }
+        counter++;        
+    }
+
+    counter = 0;
 
     /*=============================== DIA ==========================*/
 
@@ -279,7 +293,17 @@ int q4(char *strTexto, char *strBusca, int posicoes[30]){
 
 int q5(int num){
 
-    return num;
+    int number_return = 0;
+    int count = 1;
+
+    while (count <= num)
+    {
+        number_return = number_return * 10;
+        number_return = number_return + (num % (count*10)- num % count)/ count;
+        count = count * 10;
+    }
+
+    return number_return;
 }
 
 /*
