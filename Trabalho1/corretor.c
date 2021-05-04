@@ -32,11 +32,11 @@ void testQ6();
 int main(){
     //testSomar();
     //testFatorial();
-    //testQ1(); // OK
+    testQ1(); // OK
     //testQ2();
-    //testQ3();
+    testQ3(); // OK
     //testQ4();
-    //testQ5(); //OK
+    testQ5(); //OK
     //testQ6();
 }
 

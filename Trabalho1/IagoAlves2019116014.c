@@ -253,9 +253,31 @@ int q2(char *datainicial, char *datafinal, int *qtdDias, int *qtdMeses, int *qtd
     Um número n >= 0.
  */
 int q3(char *texto, char c, int isCaseSensitive){
-    int qtdOcorrencias = -1;
+    int counter = 0;  
+	int result = 0; 
+    int lenght = 0; 
 
-    return qtdOcorrencias;
+	lenght = strlen(texto);
+
+	if (isCaseSensitive){
+		counter = 0;
+        for (counter; counter <= lenght; counter++){
+            if(c == texto[counter]){
+				result++;
+			}
+        }
+	}
+	else{
+		counter = 0;
+
+        for (counter; counter <= lenght; counter++){
+            if(toupper(c) == texto[counter] || tolower(c) == texto[counter]){
+				result++;
+			}
+        }
+	}
+   
+    return result;
 
 }
 
