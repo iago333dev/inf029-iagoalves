@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "../Head/Student.h"
+#include "../Head/student.h"
+#include "../Head/layout.h"
 
 int indexStudent = 1;
 int Matricula;
@@ -10,8 +11,6 @@ char Nome[60];
 char Sexo[5];
 char dataNascimento[11];
 char Cpf[14]; 
-
-int showMenu();
 
 int createStudent(){
 

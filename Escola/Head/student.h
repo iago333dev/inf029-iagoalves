@@ -6,8 +6,6 @@ int readStudents();
 int updateStudent(int option);
 int deleteStudent();
 
-
-
 struct Student{
     int Matricula;
     char Nome[60];
